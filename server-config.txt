@@ -1,0 +1,152 @@
+Steps to configure geogram
+
+ssh -p 55222 -i ~/.ssh/geogramco.pem ubuntu@ec2-54-245-109-190.us-west-2.compute.amazonaws.com
+
+sudo nano /etc/ssh/sshd_config
+# What ports, IPs and protocols we listen for
+Port 33322
+sudo service ssh restart
+ssh -p 33322 -i .ssh/id_hal hal@ec2-xx-xx-xx-xx.compute-1.amazonaws.com
+
+sudo apt-get update
+sudo apt-get dist-upgrade 
+sudo apt-get install apache2
+
+cd /etc/apache2/sites-available
+sudo nano geogram.com
+
+<VirtualHost *:80>
+   ServerName geogram.com
+   DocumentRoot /var/www/geogram
+   DirectoryIndex index.php
+   <Directory /var/www/geogram/>
+      AllowOverride All
+      Order Deny,Allow
+      Allow from all
+   </Directory>
+</VirtualHost>
+
+cd /var/www
+sudo mkdir geogram
+sudo chown www-data:www-data geogram
+sudo nano /var/www/geogram/index.php
+sudo a2ensite geogram.com
+sudo service apache2 restart
+
+MySQL:
+sudo apt-get install mysql-server
+
+Mailgun:
+sudo apt-get install libmagic-dev php5-dev libcurl3 php5-cli php5-curl
+
+sudo apt-get install php5 libapache2-mod-php5 libapache2-mod-auth-mysql php5-mysql 
+
+mysql -u root -p
+create database geo_production;
+grant all privileges on geo_production.* TO "your user"@"localhost" identified by "yourpwd";
+flush privileges;
+exit;
+
+Install yii 
+- user extension
+- turn off gii?
+
+PHPMyAdmin
+sudo apt-get install phpmyadmin
+
+Shape files
+sudo apt-get install gdal-bin
+sudo apt-get install unzip
+
+sudo mkdir ~/zillow-data
+cd ~/zillow-data
+sudo nano ./fetch-zillow
+#!/bin/bash
+files=(
+"/static/shp/ZillowNeighborhoods-AK" "/static/shp/ZillowNeighborhoods-AL" "/static/shp/ZillowNeighborhoods-AR" "/st
+atic/shp/ZillowNeighborhoods-AZ" "/static/shp/ZillowNeighborhoods-CA" "/static/shp/ZillowNeighborhoods-CO" "/static
+/shp/ZillowNeighborhoods-CT" "/static/shp/ZillowNeighborhoods-DC" "/static/shp/ZillowNeighborhoods-FL" "/static/shp
+/ZillowNeighborhoods-GA" "/static/shp/ZillowNeighborhoods-HI" "/static/shp/ZillowNeighborhoods-IA" "/static/shp/Zil
+lowNeighborhoods-ID" "/static/shp/ZillowNeighborhoods-IL" "/static/shp/ZillowNeighborhoods-IN" "/static/shp/ZillowN
+eighborhoods-KS" "/static/shp/ZillowNeighborhoods-KY" "/static/shp/ZillowNeighborhoods-LA" "/static/shp/ZillowNeigh
+borhoods-MA" "/static/shp/ZillowNeighborhoods-MD" "/static/shp/ZillowNeighborhoods-ME" "/static/shp/ZillowNeighborh
+oods-MI" "/static/shp/ZillowNeighborhoods-MN" "/static/shp/ZillowNeighborhoods-MO" "/static/shp/ZillowNeighborhoods
+-MS" "/static/shp/ZillowNeighborhoods-MT" "/static/shp/ZillowNeighborhoods-NC" "/static/shp/ZillowNeighborhoods-NE"
+ "/static/shp/ZillowNeighborhoods-NJ" "/static/shp/ZillowNeighborhoods-NM" "/static/shp/ZillowNeighborhoods-NV" "/s
+tatic/shp/ZillowNeighborhoods-NY" "/static/shp/ZillowNeighborhoods-OH" "/static/shp/ZillowNeighborhoods-OR" "/stati
+c/shp/ZillowNeighborhoods-PA" "/static/shp/ZillowNeighborhoods-RI" "/static/shp/ZillowNeighborhoods-TN" "/static/sh
+p/ZillowNeighborhoods-TX" "/static/shp/ZillowNeighborhoods-UT" "/static/shp/ZillowNeighborhoods-VA" "/static/shp/Zi
+llowNeighborhoods-WA" "/static/shp/ZillowNeighborhoods-WI"
+  )
+  for i in "${files[@]}"
+do
+   :
+   # do whatever on $i
+   echo $i
+   TMPFILE='tempfile'
+   wget http://www.zillow.com"$i".zip -O $TMPFILE
+   unzip $TMPFILE
+   rm $TMPFILE
+done
+
+
+write a bash script for uploading all the shp files
+ogr2ogr -f MySQL MySQL:"geo_test,user=db_geo_admin,password=jYb&}zEn1a3CRF" -lco "ENGINE=MYISAM,CHARSET=utf8, COLLATE=utf8_unicode_ci" ZillowNeighborhoods-WA.shp -nln geo_neighborhoods -append 
+OR USE -overwrite
+
+ogrinfo MySQL:"geo_production,user=,password=" geo_neighborhoods -so
+
+sudo nano ./import-zillow
+#!/bin/bash
+files=( "ZillowNeighborhoods-AK" "ZillowNeighborhoods-AL" "ZillowNeighborhoods-AR" "ZillowNeighborhoods-AZ" "ZillowNeighborhoods-CA" "ZillowNeighborhoods-CO" "ZillowNeighborhoods-CT" "ZillowNeighborhoods-DC" "ZillowNeighborhoods-FL" "ZillowNeighborhoods-GA" "ZillowNeighborhoods-HI" "ZillowNeighborhoods-IA" "ZillowNeighborhoods-ID" "ZillowNeighborhoods-IL" "ZillowNeighborhoods-IN" "ZillowNeighborhoods-KS" "ZillowNeighborhoods-KY" "ZillowNeighborhoods-LA" "ZillowNeighborhoods-MA" "ZillowNeighborhoods-MD" "ZillowNeighborhoods-ME" "ZillowNeighborhoods-MI" "ZillowNeighborhoods-MN" "ZillowNeighborhoods-MO" "ZillowNeighborhoods-MS" "ZillowNeighborhoods-MT" "ZillowNeighborhoods-NC" "ZillowNeighborhoods-NE" "ZillowNeighborhoods-NJ" "ZillowNeighborhoods-NM" "ZillowNeighborhoods-NV" "ZillowNeighborhoods-NY" "ZillowNeighborhoods-OH" "ZillowNeighborhoods-OR" "ZillowNeighborhoods-PA" "ZillowNeighborhoods-RI" "ZillowNeighborhoods-TN" "ZillowNeighborhoods-TX" "ZillowNeighborhoods-UT" "ZillowNeighborhoods-VA" "ZillowNeighborhoods-WA" "ZillowNeighborhoods-WI")
+  for i in "${files[@]}"
+do
+   :
+   # do whatever on $i
+   echo $i
+   wget http://www.zillow.com.zip -O $TMPFILE
+   ogr2ogr -f MySQL MySQL:"geo_test,user=db_geo_admin,password=jYb&}zEn1a3CRF" -lco "ENGINE=MYISAM,CHARSET=utf8, COLLATE=utf8_unicode_ci" "$i".shp -nln geo_neighborhoods -append 
+done
+
+write a bash script for uploading all the shp files
+ogr2ogr -f MySQL MySQL:"geo_test,user=db_geo_admin,password=jYb&}zEn1a3CRF" -lco "ENGINE=MYISAM,CHARSET=utf8, COLLATE=utf8_unicode_ci" ZillowNeighborhoods-WA.shp -nln geo_neighborhoods -append 
+OR USE -overwrite
+
+
+Set up PHPMyADmin
+http://stackoverflow.com/questions/2631269/how-to-secure-phpmyadmin
+
+sudo nano /etc/phpmyadmin/apache.conf
+Alias /secret /usr/share/phpmyadmin
+
+grant all privileges on geo_test.* TO "your pma user"@"localhost" identified by "your pwd";
+sudo dpkg-reconfigure phpmyadmin
+
+sudo apt-get install git
+https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04
+
+/**
+     * Create a simple slug by just replacing white spaces
+     *
+     * @param string $str
+     * @access protected
+     * @return void
+     */
+    protected function simpleSlug($str)
+    {
+        $slug = preg_replace('@[\s!:;_\?=\\\+\*/%&#]+@', '-', $str);
+        if (true === $this->toLower) {
+            $slug = mb_strtolower($slug, Yii::app()->charset);
+        }
+        $slug = trim($slug, '-');
+        return $slug;
+    }
+
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+/iRedMail/iRedMail-0.8.3/config
+Read http://www.clamav.net/support/faq
+httpS://cube.skymail.me/mail/
+httpS://cube.skymail.me/iredadmin/
+postmaster@skymail.me
+iRedMail/iRedMail-0.8.3/iRedMail.tips

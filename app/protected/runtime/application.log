@@ -1,0 +1,83 @@
+2013/06/13 20:46:42 [error] [php] Undefined index: User (/Users/Jeff/Sites/yii/geo/protected/modules/user/controllers/ProfileController.php:42)
+Stack trace:
+#0 /Users/Jeff/Sites/yii/framework/web/CController.php(286): ProfileController->runAction()
+#1 /Users/Jeff/Sites/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#2 /Users/Jeff/Sites/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#3 /Users/Jeff/Sites/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Users/Jeff/Sites/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Users/Jeff/Sites/yii/geo/index.php(9): CWebApplication->run()
+REQUEST_URI=/yii/geo/user/profile/edit
+2013/06/13 20:46:51 [error] [php] Undefined index: User (/Users/Jeff/Sites/yii/geo/protected/modules/user/controllers/ProfileController.php:42)
+Stack trace:
+#0 /Users/Jeff/Sites/yii/framework/web/CController.php(286): ProfileController->runAction()
+#1 /Users/Jeff/Sites/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#2 /Users/Jeff/Sites/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#3 /Users/Jeff/Sites/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Users/Jeff/Sites/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Users/Jeff/Sites/yii/geo/index.php(9): CWebApplication->run()
+REQUEST_URI=/yii/geo/user/profile/edit
+2013/06/13 20:47:16 [error] [php] Undefined index: User (/Users/Jeff/Sites/yii/geo/protected/modules/user/controllers/ProfileController.php:42)
+Stack trace:
+#0 /Users/Jeff/Sites/yii/framework/web/CController.php(286): ProfileController->runAction()
+#1 /Users/Jeff/Sites/yii/framework/web/CController.php(265): ProfileController->runActionWithFilters()
+#2 /Users/Jeff/Sites/yii/framework/web/CWebApplication.php(282): ProfileController->run()
+#3 /Users/Jeff/Sites/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Users/Jeff/Sites/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Users/Jeff/Sites/yii/geo/index.php(9): CWebApplication->run()
+REQUEST_URI=/yii/geo/user/profile/edit
+2013/06/18 13:49:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table 'geodev.#sql-2dcf_2e' (errno: 150). The SQL statement executed was: ALTER TABLE `geo_transit_stop` ADD CONSTRAINT `fk_transit_stop_route_id` FOREIGN KEY (`route_id`) REFERENCES `geo_transit_route` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2013/06/18 13:51:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'geo_transit_stop' already exists. The SQL statement executed was: CREATE TABLE `geo_transit_stop` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`route_id` INTEGER DEFAULT 0,
+	`place_id` INTEGER DEFAULT 0,
+	`modified_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2013/06/18 13:52:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table 'geodev.#sql-2dcf_45' (errno: 150). The SQL statement executed was: ALTER TABLE `geo_transit_stop` ADD CONSTRAINT `fk_transit_stop_route_id` FOREIGN KEY (`route_id`) REFERENCES `geo_transit_route` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2013/06/18 13:55:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1025 Error on rename of './geodev/geo_transit_stop' to './geodev/#sql2-2dcf-68' (errno: 152). The SQL statement executed was: ALTER TABLE `geo_transit_stop` DROP FOREIGN KEY `fk_transit_stop_route_id`.
+2013/06/18 14:02:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table 'geodev.#sql-2dcf_6d' (errno: 150). The SQL statement executed was: ALTER TABLE `geo_transit_stop` ADD CONSTRAINT `fk_transit_stop_route_id` FOREIGN KEY (`route_id`) REFERENCES `geo_transit_route` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2013/06/18 14:03:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table 'geodev.#sql-2dcf_73' (errno: 150). The SQL statement executed was: ALTER TABLE `geo_transit_stop` ADD CONSTRAINT `fk_transit_stop_route_id` FOREIGN KEY (`route_id`) REFERENCES `geo_transit_route` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2013/06/18 14:04:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'geo_transit_stop' already exists. The SQL statement executed was: CREATE TABLE `geo_transit_stop` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`route_id` INTEGER DEFAULT 0,
+	`place_id` INTEGER DEFAULT 0,
+	`modified_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2013/06/18 14:06:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'geo_transit_stop' already exists. The SQL statement executed was: CREATE TABLE `geo_transit_stop` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`route_id` INTEGER DEFAULT 0,
+	`place_id` INTEGER DEFAULT 0,
+	`modified_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2013/06/18 14:08:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table 'geodev.#sql-2dcf_ab' (errno: 150). The SQL statement executed was: ALTER TABLE `geo_transit_stop` ADD CONSTRAINT `fk_transit_stop_route_id` FOREIGN KEY (`route_id`) REFERENCES `geo_transit_route` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2013/06/18 14:18:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table 'geodev.#sql-2dcf_ce' (errno: 150). The SQL statement executed was: ALTER TABLE `geo_transit_stop` ADD CONSTRAINT `fk_transit_stop_route_id` FOREIGN KEY (`route_id`) REFERENCES `geo_transit_route` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2013/06/18 14:19:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'geo_transit_stop' already exists. The SQL statement executed was: CREATE TABLE `geo_transit_stop` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`route_id` INTEGER DEFAULT 0,
+	`place_id` INTEGER DEFAULT 0,
+	`modified_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2013/07/24 10:24:26 [error] [php] require_once(/Users/Jeff/Sites/listapp/app/protected/migrations/m130617_003830_add_pushover_fields_to_profile.php): failed to open stream: No such file or directory (/Users/Jeff/Sites/listapp/framework/cli/commands/MigrateCommand.php:432)
+Stack trace:
+#0 /Users/Jeff/Sites/listapp/framework/cli/commands/MigrateCommand.php(149): MigrateCommand->migrateDown()
+#1 unknown(0): MigrateCommand->actionDown()
+#2 /Users/Jeff/Sites/listapp/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#3 /Users/Jeff/Sites/listapp/framework/console/CConsoleCommandRunner.php(67): MigrateCommand->run()
+#4 /Users/Jeff/Sites/listapp/framework/console/CConsoleApplication.php(91): CConsoleCommandRunner->run()
+#5 /Users/Jeff/Sites/listapp/framework/base/CApplication.php(169): CConsoleApplication->processRequest()
+#6 /Users/Jeff/Sites/listapp/framework/yiic.php(33): CConsoleApplication->run()
+#7 /Users/Jeff/Sites/listapp/app/protected/yiic.php(7): require_once()
+#8 /Users/Jeff/Sites/listapp/app/protected/yiic(4): require_once()
+
+2013/07/24 10:25:52 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'listapp.geo_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `geo_migration`.
+2013/07/24 10:37:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1091 Can't DROP 'mg_list_id'; check that column/key exists. The SQL statement executed was: DROP INDEX `mg_list_id` ON `geo_mglist`.
+2013/07/24 13:45:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+	`created_at` DATETIME NOT NULL DEFAULT 0,
+	`modified_at` TIMESTAMP DEFAULT CUR' at line 6. The SQL statement executed was: CREATE TABLE `la_mglist` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`address` varchar(255) NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`description` text,
+	`access_level` varchar(255) NOT NULL DEFAULT,
+	`created_at` DATETIME NOT NULL DEFAULT 0,
+	`modified_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci.

@@ -1,0 +1,102 @@
+Sign up at the RackSpace Cloud
+http://www.rackspace.com/cloud/
+Create a Cloud Server
+Image: Ubuntu 12.04
+RAM: 1 GB
+- save your password -
+
+When the image is built, you can ssh in at the IP address:
+ssh root@xxx.xxx.xxx.xxx
+
+Set your DNS:
+yourdomain.com A record to xxx.xxx.xxx.xxx (IP address)
+
+Run the following steps to install LAMP:
+sudo apt-get update
+sudo apt-get install apache2
+sudo apt-get install php5 libapache2-mod-php5
+sudo apt-get install php5-curl
+sudo apt-get install php-pear
+sudo pear install Mail
+sudo pear install Mail_mime
+sudo a2enmod rewrite
+
+Configure your site in apache:
+cd /etc/apache2/sites-available/
+sudo nano listapp
+
+<VirtualHost *:80>
+        ServerName listapp.yourdomain.com
+        DocumentRoot /var/www/listapp/app 
+   DirectoryIndex index.php
+   <Directory /var/www/listapp/app/>
+      AllowOverride All
+      Order Deny,Allow
+      Allow from all
+   </Directory>
+</VirtualHost>
+
+Enable the site
+sudo a2ensite listapp
+
+Install MySQL Server:
+sudo apt-get install mysql-server php5-mysal
+- provide a password for mysql: xxxxxxx
+
+Restart Apache:
+sudo service apache2 restart
+
+Install the code... you can use wget or clone it from github:
+sudo apt-get install git-core
+ssh-keygen -t rsa -C "you@yourdomain.com"
+- enter the path for /home/root/.ssh/id_rsa
+cd /root/.ssh
+more id_rsa.pub
+- copy key to your forked github project settings deploy key
+Test connection to Github
+ssh -T git@github.com
+
+Clone the repository:
+cd /var/www
+git clone git@github.com:newscloud/listapp.git
+
+Initialize the database:
+mysql -uroot -p
+create database listapp;
+
+(replace newuser and password below with your own)
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;
+see also: https://www.digitalocean.com/community/articles/how-to-create-a-new-user-and-grant-permissions-in-mysql
+
+Build the configuration file for your application:
+- you'll need to sign up for Mailgun.com (at least free level) to get API keys
+cd /var/www
+mkdir secure
+cd /var/www/secure
+sudo nano config-listapp.ini
+- copy & paste in your settings using sample-config.ini (in this directory)
+- as an example
+- but use the mysql password and mailgun keys and your chosen domain
+
+Run the database migrations:
+cd /var/www/listapp
+./app/protected/yiic migrate up
+Enter your admin user name, email and password
+- this is what you'll use to log in to the application
+
+Visit your web page:
+http://listapp.yourdomain.com
+
+Login with your user name and password
+
+You should be ready to go...
+
+You can post issues on Github:
+https://github.com/newscloud/listapp/issues
+
+Or, as comments on the mailgun blog:
+http://blog.mailgun.com/post/turnkey-mailing-list-applet-using-the-mailgun-api
+
+

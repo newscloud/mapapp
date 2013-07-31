@@ -1,0 +1,348 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	background: #EFEFEF;
+}
+
+.nav_spacer {
+  margin-bottom:50px;
+}
+
+.navbar a.brand {
+  padding: 5px 20px 5px;
+}
+
+#page
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: white;
+	border: 1px solid #C9E0ED;
+}
+
+#header
+{
+	margin: 0;
+	padding: 0;
+	border-top: 3px solid #C9E0ED;
+}
+
+#content
+{
+    padding: 20px;
+}
+
+#sidebar
+{
+	padding: 20px 20px 20px 0;
+}
+
+#footer
+{
+	padding: 10px;
+	margin: 10px 20px;
+	font-size: 0.8em;
+	text-align: center;
+	border-top: 1px solid #C9E0ED;
+}
+
+#logo
+{
+	padding: 10px 20px;
+	font-size: 200%;
+}
+
+#mainmenu
+{
+	background:white url(bg.gif) repeat-x left top;
+}
+
+#mainmenu ul
+{
+	padding:6px 20px 5px 20px;
+	margin:0px;
+}
+
+#mainmenu ul li
+{
+	display: inline;
+}
+
+#mainmenu ul li a
+{
+	color:#ffffff;
+	background-color:transparent;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:5px 8px;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a
+{
+	color: #6399cd;
+	background-color:#EFF4FA;
+	text-decoration:none;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
+
+div.form .rememberMe label
+{
+	display: inline;
+}
+
+div.view
+{
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #C9E0ED;
+}
+
+div.breadcrumbs
+{
+	font-size: 0.9em;
+	padding: 5px 20px;
+}
+
+div.breadcrumbs span
+{
+	font-weight: bold;
+}
+
+div.search-form
+{
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+
+.portlet
+{
+
+}
+
+.portlet-decoration
+{
+	padding: 3px 8px;
+	background: #B7D6E7;
+	border-left: 5px solid #6FACCF;
+}
+
+.portlet-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #298dcd;
+}
+
+.home-content .portlet {
+  width:240px;
+}
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	background:#cccccc; 
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 2px 0 4px 0px;
+}
+
+.operations
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operations li
+{
+	padding-bottom: 2px;
+}
+
+.operations li a
+{
+	font: bold 12px Arial;
+	color: #0066A4;
+	display: block;
+	padding: 2px 0 2px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.operations li a:visited
+{
+	color: #0066A4;
+}
+
+.operations li a:hover
+{
+	background: #80CFFF;
+}
+
+.center {
+  text-align: center;	
+}
+
+#EGMapContainer0, #qr_region {
+  border: 1px solid black;
+}
+
+.place_directory {
+  
+}
+
+.profile_picture {
+  width: 50px;
+  height: auto;
+  float:left;
+  margin: 0 10px 5px 0;
+}
+
+#place_email {
+  font-style: italic;
+}
+
+#about img {
+  border: 1px solid black;
+  margin: 5px 5px 5px 25px;
+}
+
+#post_setting_status, #reply_setting_status {
+  font-weight: bold; 
+  margin: 5px;
+  }
+
+.post .subject { 
+  font-weight:bold;
+  font-size:120%;
+}
+.post td.narrow_column {
+  width: 10%;
+}
+.post td.message_body {
+  border-bottom:1px solid #ddddde;
+}
+
+.post table.message {
+  margin-bottom:10px;
+  
+}
+
+#replies {
+  margin: 0px 25px 0px 25px;
+}
+.reply_thread {
+  margin: 5px 5px 10px 5px;
+  
+}
+.reply {
+  margin: 20px 0px 5px 0px;
+  border-top: 1px solid #DDDDDE;
+  clear:both;
+}
+.reply_head {
+  clear:both;
+  margin: 10px 0px 5px 0px;
+  
+}
+
+.reply_body {
+  margin: 0px 0px 10px 0px;
+}
+
+#reply_form {
+  margin: 20px 0px 0px 0px;
+  
+}
+
+// egMap icon fix
+#EGMapContainer0 img{max-width:none}
+
+// map drawing
+#info{												
+			position: absolute;
+	        background: rgba(175,175,175,0.9);
+            color: black;
+            font: 12px sans-serif;
+			padding: 5px;
+			top: 8px;
+			left: 520px;
+			width: 380px; 
+			height: 445px; 
+			border: 1px solid black;
+            border-radius: 2px;
+			visibility: visible;
+			/*overflow:scroll;*/
+ }
+
+#coords{												
+	        background: rgba(175,175,175,0.9);
+            color: black;
+            font: 12px sans-serif;
+			padding: 5px;
+			height: 200px; 
+			border: 1px solid black;
+            border-radius: 2px;
+			visibility: visible;
+			overflow:auto;
+ }

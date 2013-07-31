@@ -1,0 +1,20 @@
+Usage of QRCodes
+================
+
+Parameter Accept
+1. data // serve as a text for the barcode to be generated
+2. filename // filename of the qrcode, default to qrcode.png
+3. filePath // filepath for saving image to local disk, default to Yii::app()->getBasePath . '/../uploads'
+4. fileUrl // fileurl for rendering an image in CHtml::image()
+5. subFolderVar // image is in subfolder, default to false
+6. subFolderName // subfolder name, only works if subfoldervar set to true
+7. errorCorrectionLevel // only accept L,M,Q,H
+8. matrixPointSize // size of barcode, min of 1, max of 10
+
+in your view put this line of codes
+
+<?php $this->widget('application.extensions.qrcode.QRCodeGenerator',array(
+    'data' => 'http://www.bryantan.info',
+    'subfolderVar' => true,
+    'matrixPointSize' => 5,
+)) ?>

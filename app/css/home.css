@@ -1,0 +1,124 @@
+body { 
+     background: no-repeat center center fixed;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+       -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+}
+ 
+.home-header {
+    color: white;
+    border: 3px;
+    margin: 50px 0px 0px 50px;
+}
+
+.home-header h1 {
+  margin-bottom: 3px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  }
+
+.home-header p {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #eee;
+  text-align: left;
+  text-shadow: #000 0 1px 2px;
+  }
+  
+.inlineField {
+  display:inline;
+}
+
+.narrowField {
+  width:95px;
+  margin-right: 5px;
+}
+
+
+.signup-button {
+  text-align:right;
+}
+
+.portlet-content {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom:10px;
+}
+
+.portlet-content form {
+  margin-bottom:0px;
+}
+
+#facebookPortlet {
+  min-height:58px;
+}
+
+#facebookHeader {
+  display: inline;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #777;
+  text-shadow: 0 1px 0 rgba(255,255,255,.6);
+line-height: 24px;
+text-rendering: optimizeLegibility;
+margin-bottom: 10px;
+}
+
+#newSignInHeader, #newSignUpHeader {
+  display: inline;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+  text-shadow: 0 1px 0 rgba(255,255,255,.6);
+line-height: 36px;
+text-rendering: optimizeLegibility;
+margin-bottom: 10px;
+}
+
+#home-signin .btn, #home-signup .btn {
+  margin-bottom: 10px;
+}
+
+#RegistrationForm_firstname, #RegistrationForm_lastname {
+    display:inline;
+    width: 40%;
+}
+
+.footer {
+  text-align: center;
+  margin: 0px 0px 25px 0px;
+}
+.footer ul.inline {
+  display: inline;
+  list-style-type: none;
+}
+
+.footer ul.inline li {
+  display: inline;
+}
+.footer ul.inline li a {
+  text-decoration:none;
+}
+
+.footer {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  
+}
+.footer a {
+color: rgba(255,255,255,.5);
+}
+
+.copyright {
+  color: rgba(255,255,255,.25);
+}
