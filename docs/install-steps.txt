@@ -18,15 +18,29 @@ sudo apt-get install php5 libapache2-mod-php5
 sudo apt-get install php5-curl
 sudo a2enmod rewrite
 
+Install the code... you can use wget or clone it from github:
+sudo apt-get install git-core
+ssh-keygen -t rsa -C "you@yourdomain.com"
+- enter the path for /home/root/.ssh/id_rsa
+cd /root/.ssh
+more id_rsa.pub
+- copy key to your forked github project settings deploy key
+Test connection to Github
+ssh -T git@github.com
+
+Clone the repository:
+cd /var/www
+git clone git@github.com:newscloud/mapapp.git
+
 Configure your site in apache:
 cd /etc/apache2/sites-available/
 sudo nano mapapp
 
 <VirtualHost *:80>
         ServerName mapapp.yourdomain.com
-        DocumentRoot /var/www/MapApp/app 
+        DocumentRoot /var/www/mapapp/app 
    DirectoryIndex index.php
-   <Directory /var/www/MapApp/app/>
+   <Directory /var/www/mapapp/app/>
       AllowOverride All
       Order Deny,Allow
       Allow from all
@@ -64,21 +78,6 @@ copy wget-zillow.txt to ~/zillow/wget-zillow
 copy import-zillow.txt to ~/zillow/import-zillow
 Edit the database name, credentials and neighborhood table in import-zillow script
 > bash import-zillow
-
-
-Install the code... you can use wget or clone it from github:
-sudo apt-get install git-core
-ssh-keygen -t rsa -C "you@yourdomain.com"
-- enter the path for /home/root/.ssh/id_rsa
-cd /root/.ssh
-more id_rsa.pub
-- copy key to your forked github project settings deploy key
-Test connection to Github
-ssh -T git@github.com
-
-Clone the repository:
-cd /var/www
-git clone git@github.com:newscloud/mapapp.git
 
 Build the configuration file for your application:
 - you'll need to sign up for Mailgun.com (at least free level) to get API keys

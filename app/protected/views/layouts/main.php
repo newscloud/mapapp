@@ -48,9 +48,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 			'htmlOptions'=>array('class'=>'pull-right'),
 			'items' => array(
         array('label'=>'About', 'items'=> array(
-          array('url'=>'http://blog.mailgun.com/post/turnkey-mailing-list-applet-using-the-mailgun-api', 'label'=>'Read the tutorial'),
-        array('url'=>'https://github.com/newscloud/listapp', 'label'=>'Get the code'),
-        array('url'=>'http://documentation.mailgun.com/api-mailinglists.html', 'label'=>'Mailgun documentation'),
+        array('url'=>'https://github.com/newscloud/mapapp', 'label'=>'Get the code'),
         array('url'=>'http://jeffreifman.com/consulting', 'label'=>'About NewsCloud'),
 				)),
 				array('label'=>'Account', 'items'=> array(
@@ -73,8 +71,8 @@ array('url'=>Yii::app()->getModule('user')->logoutUrl, 'label'=>'Sign out', 'vis
 	<div class="clear"></div>
 
 	<div id="footer">
-    <div class="left">Provided by <a href="http://mailgun.com">Mailgun</a></div>
-  <div class="right">Written by <?php echo date('Y'); ?> <a href="http://jeffreifman.com/consulting">NewsCloud Consulting</a></div>
+  <div class="left">&copy; 2013 <?php echo date('Y'); ?> <a href="http://jeffreifman.com/consulting">NewsCloud Consulting</a></div>
+  <div class="right"></div>
 	</div><!-- footer -->
 
 </div><!-- page -->
