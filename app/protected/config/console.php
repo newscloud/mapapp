@@ -1,5 +1,5 @@
 <?php
- $config = parse_ini_file(dirname(__FILE__) .'/../../../../secure/config-monitorapp.ini', true);
+ $config = parse_ini_file(dirname(__FILE__) .'/../../../../secure/config-mapapp.ini', true);
  require_once dirname(__FILE__) . '/../components/helpers.php'; 
  
 // This is the configuration for yiic console application.

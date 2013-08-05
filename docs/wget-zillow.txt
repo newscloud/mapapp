@@ -1,0 +1,16 @@
+# Important: watch that line breaks don't break the script
+
+# if you want to download just one state, simplify the files line below e.g. 
+# files=("/static/shp/ZillowNeighborhoods-WA.zip")
+
+files=("ZillowNeighborhoods-AK" "ZillowNeighborhoods-AL" "ZillowNeighborhoods-AR" "ZillowNeighborhoods-AZ" "ZillowNeighborhoods-CA" "ZillowNeighborhoods-CO" "ZillowNeighborhoods-CT" "ZillowNeighborhoods-DC" "ZillowNeighborhoods-FL" "ZillowNeighborhoods-GA" "ZillowNeighborhoods-HI" "ZillowNeighborhoods-IA" "ZillowNeighborhoods-ID" "ZillowNeighborhoods-IL" "ZillowNeighborhoods-IN" "ZillowNeighborhoods-KS" "ZillowNeighborhoods-KY" "ZillowNeighborhoods-LA" "ZillowNeighborhoods-MA" "ZillowNeighborhoods-MD" "ZillowNeighborhoods-ME" "ZillowNeighborhoods-MI" "ZillowNeighborhoods-MN" "ZillowNeighborhoods-MO" "ZillowNeighborhoods-MS" "ZillowNeighborhoods-MT" "ZillowNeighborhoods-NC" "ZillowNeighborhoods-NE" "ZillowNeighborhoods-NJ" "ZillowNeighborhoods-NM" "ZillowNeighborhoods-NV" "ZillowNeighborhoods-NY" "ZillowNeighborhoods-OH" "ZillowNeighborhoods-OR" "ZillowNeighborhoods-PA" "ZillowNeighborhoods-RI" "ZillowNeighborhoods-TN" "ZillowNeighborhoods-TX" "ZillowNeighborhoods-UT" "ZillowNeighborhoods-VA" "ZillowNeighborhoods-WA")
+  for i in "${files[@]}"
+do
+   :
+   # do whatever on $i
+   echo $i
+   TMPFILE='tempfile'
+   wget http://www.zillow.com/static/shp/"$i".zip -O $TMPFILE
+   unzip $TMPFILE
+   rm $TMPFILE
+done

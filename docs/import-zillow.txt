@@ -1,0 +1,15 @@
+# Important: watch that line breaks don't break the script
+
+# Important: replace your database name, credentials and neighborhood table in the ogr2ogr line below
+
+# could also use find *.shp
+files=( "ZillowNeighborhoods-WA" "ZillowNeighborhoods-OR")
+#files=("ZillowNeighborhoods-AK" "ZillowNeighborhoods-AL" "ZillowNeighborhoods-AR" "ZillowNeighborhoods-AZ" "ZillowNeighborhoods-CA" "ZillowNeighborhoods-CO" "ZillowNeighborhoods-CT" "ZillowNeighborhoods-DC" "ZillowNeighborhoods-FL" "ZillowNeighborhoods-GA" "ZillowNeighborhoods-HI" "ZillowNeighborhoods-IA" "ZillowNeighborhoods-ID" "ZillowNeighborhoods-IL" "ZillowNeighborhoods-IN" "ZillowNeighborhoods-KS" "ZillowNeighborhoods-KY" "ZillowNeighborhoods-LA" "ZillowNeighborhoods-MA" "ZillowNeighborhoods-MD" "ZillowNeighborhoods-ME" "ZillowNeighborhoods-MI" "ZillowNeighborhoods-MN" "ZillowNeighborhoods-MO" "ZillowNeighborhoods-MS" "ZillowNeighborhoods-MT" "ZillowNeighborhoods-NC" "ZillowNeighborhoods-NE" "ZillowNeighborhoods-NJ" "ZillowNeighborhoods-NM" "ZillowNeighborhoods-NV" "ZillowNeighborhoods-NY" "ZillowNeighborhoods-OH" "ZillowNeighborhoods-OR" "ZillowNeighborhoods-PA" "ZillowNeighborhoods-RI" "ZillowNeighborhoods-TN" "ZillowNeighborhoods-TX" "ZillowNeighborhoods-UT" "ZillowNeighborhoods-VA" "ZillowNeighborhoods-WA")
+  for i in "${files[@]}"
+do
+   :
+   # do whatever on $i
+   echo $i
+   # ogr2ogr ... append is all on one line
+   ogr2ogr -f MySQL MySQL:"your_db_name,user=db_user,password=db_password" -lco "ENGINE=MYISAM,CHARSET=utf8, COLLATE=utf8_unicode_ci" "$i".shp -nln ma_neighborhoods -append 
+done

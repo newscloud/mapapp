@@ -1,5 +1,5 @@
 <?php
-  $config = parse_ini_file(dirname(__FILE__) .'/../../../../secure/config-monitorapp.ini', true);
+  $config = parse_ini_file(dirname(__FILE__) .'/../../../../secure/config-mapapp.ini', true);
   if ($config['env']<>'live') 
     defined('YII_DEBUG') or define('YII_DEBUG',true);
   require_once dirname(__FILE__) . '/../components/helpers.php'; 
