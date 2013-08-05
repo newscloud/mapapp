@@ -37,9 +37,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 			'class' => 'bootstrap.widgets.TbMenu',
 			'htmlOptions'=>array('class'=>'pull-left'),
 			'items' => array(
-				array('label'=>'Lists', 'url'=>array('/mglist/index'), ),
-//				array('label'=>'Messages', 'url'=>array('/message/index'), ),
-				array('label'=>'Synchronize', 'url'=>array('/mglist/syncAll'), ),
+				array('label'=>'Neighborhoods', 'url'=>array('/neighborhood/index'), ),
+				array('label'=>'Geolocation', 'url'=>array('/geolocation/index'), ),
 			)
   	  ) : array() ),
 
@@ -48,6 +47,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 			'htmlOptions'=>array('class'=>'pull-right'),
 			'items' => array(
         array('label'=>'About', 'items'=> array(
+ array('url'=>'http://jeffreifman.com/2013/07/31/how-to-use-zillow-neighborhood-maps-and-html5-geolocation', 'label'=>'Read the tutorial'),
         array('url'=>'https://github.com/newscloud/mapapp', 'label'=>'Get the code'),
         array('url'=>'http://jeffreifman.com/consulting', 'label'=>'About NewsCloud'),
 				)),
@@ -71,7 +71,7 @@ array('url'=>Yii::app()->getModule('user')->logoutUrl, 'label'=>'Sign out', 'vis
 	<div class="clear"></div>
 
 	<div id="footer">
-  <div class="left">&copy; 2013 <?php echo date('Y'); ?> <a href="http://jeffreifman.com/consulting">NewsCloud Consulting</a></div>
+  <div class="left">&copy; <?php echo date('Y'); ?> <a href="http://jeffreifman.com/consulting">NewsCloud Consulting</a></div>
   <div class="right"></div>
 	</div><!-- footer -->
 

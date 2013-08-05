@@ -81,3 +81,4 @@ Stack trace:
 	`created_at` DATETIME NOT NULL DEFAULT 0,
 	`modified_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2013/08/05 11:16:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mapapp.ma_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `ma_migration`.

@@ -15,8 +15,8 @@ Yii::import('application.modules.user.UserModule');
     </div>
   <div class="span5">
     <div class="home-header">
-    	  <h1>Welcome to Listapp</h1>
-<p>An open source utility for managing your Mailgun.com mailing lists. <a href="http://blog.mailgun.com/post/turnkey-mailing-list-applet-using-the-mailgun-api">Learn more</a>.</p>
+    	  <h1>Welcome to MapApp</h1>
+<p>An open source demonstration app for Zillow's Neighborhood Maps, Google Maps, HTML 5 Geolocation and use of MySQL Spatial. <a href="http://jeffreifman.com/2013/07/31/how-to-use-zillow-neighborhood-maps-and-html5-geolocation">Learn more</a>.</p>
     	</div>
     </div>  
   <div class="home-content span3">
