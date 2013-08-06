@@ -119,4 +119,4 @@ You can post issues on Github:
 https://github.com/newscloud/mapapp/issues
 
 Or, as comments on my blog post:
-http://jeffreifman.com/2013/07/31/how-to-use-zillow-neighborhood-maps-and-html5-geolocation
+http://jeffreifman.com/2013/08/06/how-to-use-zillow-neighborhood-maps-and-html5-geolocation/

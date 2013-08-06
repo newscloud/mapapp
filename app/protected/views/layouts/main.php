@@ -47,7 +47,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 			'htmlOptions'=>array('class'=>'pull-right'),
 			'items' => array(
         array('label'=>'About', 'items'=> array(
- array('url'=>'http://jeffreifman.com/2013/07/31/how-to-use-zillow-neighborhood-maps-and-html5-geolocation', 'label'=>'Read the tutorial'),
+ array('url'=>'http://jeffreifman.com/2013/08/06/how-to-use-zillow-neighborhood-maps-and-html5-geolocation/', 'label'=>'Read the tutorial'),
         array('url'=>'https://github.com/newscloud/mapapp', 'label'=>'Get the code'),
         array('url'=>'http://jeffreifman.com/consulting', 'label'=>'About NewsCloud'),
 				)),

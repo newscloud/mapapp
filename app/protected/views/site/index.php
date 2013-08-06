@@ -16,7 +16,7 @@ Yii::import('application.modules.user.UserModule');
   <div class="span5">
     <div class="home-header">
     	  <h1>Welcome to MapApp</h1>
-<p>An open source demonstration app for Zillow's Neighborhood Maps, Google Maps, HTML 5 Geolocation and use of MySQL Spatial. <a href="http://jeffreifman.com/2013/07/31/how-to-use-zillow-neighborhood-maps-and-html5-geolocation">Learn more</a>.</p>
+<p>An open source demonstration app for Zillow's Neighborhood Maps, Google Maps, HTML 5 Geolocation and use of MySQL Spatial. <a href="http://jeffreifman.com/2013/08/06/how-to-use-zillow-neighborhood-maps-and-html5-geolocation/">Learn more</a>.</p>
     	</div>
     </div>  
   <div class="home-content span3">

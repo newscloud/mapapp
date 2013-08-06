@@ -34,7 +34,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 
   <div class="footer" >
     <ul class="inline">
-      <li> <a href="http://jeffreifman.com/2013/07/31/how-to-use-zillow-neighborhood-maps-and-html5-geolocation">About</a><span class="dot divider"> &middot;</span></li>
+      <li> <a href="http://jeffreifman.com/2013/08/06/how-to-use-zillow-neighborhood-maps-and-html5-geolocation/">About</a><span class="dot divider"> &middot;</span></li>
        <li ><a href="https://github.com/newscloud/mapapp">Code</a><span class="dot divider"> &middot;</span></li>
       <li ><a href="https://github.com/newscloud/mapapp/issues">Help</a><span class="dot divider"> &middot;</span></li>
 <!--       <li ><a href="/privacy">Privacy</a><span class="dot divider"> &middot;</span></li>       <li><a href="http://mailgun.com">Mailgun</a><span class="dot divider"> &middot;</span></li>
