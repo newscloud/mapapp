@@ -88,6 +88,20 @@ $options = array(
         'class'=>'ext.EPhpThumb.EPhpThumb',
         'options'=>array(),
     ),	  
+		'geocoder' => array(
+			'class' => 'ext.EGeocoder.EGeocoder',
+			// 'httpAdapter' => 'Socket',
+			'providers' => array(
+                new \Geocoder\Provider\FreeGeoIpProvider(new \Geocoder\HttpAdapter\CurlHttpAdapter()),
+                new \Geocoder\Provider\GoogleMapsProvider(new \Geocoder\HttpAdapter\CurlHttpAdapter()),
+                'GeoPlugin',
+                array(
+                    'name' => 'IpInfoDb',
+                    // Please use your own api key
+                    'apiKey' => 'fe469eea906d1be01894ef2a7dd7a1d64fb9f412ab5ebdcxx2576c7af9ac04a014',
+                ),
+            ),
+		),
 		'session' => array(
                 'timeout' => 86400,
             ),
@@ -157,9 +171,8 @@ $options = array(
 		'adminEmail'=>'admin@yourdomain.com',
 		'supportEmail'=>$config['support_email'],
 		'postsPerPage'=> 10,
-    'mailgun'=> array(
-      'api_key'=> $config['mailgun_api_key'],
-        'api_url' => $config['mailgun_api_url']
+    'google'=> array(
+      'maps_api_key' => $config['google_maps_api_key'],
     ),
 	),
 );

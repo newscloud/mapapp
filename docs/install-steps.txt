@@ -95,6 +95,11 @@ cd /var/www/mapapp
 Enter your admin user name, email and password
 - this is what you'll use to log in to the application
 
+Important:
+- Reverse the Zillow neighborhood coordinates
+- Visit http://yourdomain.com/mapapp/app/neighborhoods/reverse
+
+
 Visit your web page:
 http://mapapp.yourdomain.com
 

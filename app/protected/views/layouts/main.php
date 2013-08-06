@@ -7,7 +7,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
@@ -37,7 +37,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 			'class' => 'bootstrap.widgets.TbMenu',
 			'htmlOptions'=>array('class'=>'pull-left'),
 			'items' => array(
-				array('label'=>'Neighborhoods', 'url'=>array('/neighborhood/index'), ),
+				array('label'=>'Neighborhoods', 'url'=>array('/neighborhoods/index'), ),
 				array('label'=>'Geolocation', 'url'=>array('/geolocation/index'), ),
 			)
   	  ) : array() ),
@@ -70,10 +70,12 @@ array('url'=>Yii::app()->getModule('user')->logoutUrl, 'label'=>'Sign out', 'vis
 
 	<div class="clear"></div>
 
-	<div id="footer">
-  <div class="left">&copy; <?php echo date('Y'); ?> <a href="http://jeffreifman.com/consulting">NewsCloud Consulting</a></div>
-  <div class="right"></div>
-	</div><!-- footer -->
+  	<div id="footer">
+    <div class="right"><a href="http://www.zillow.com/howto/api/neighborhood-boundaries.htm" target="_blank"><img src="http://cloud.geogram.com/images/zillow.gif"></a></div>
+    <div class="left"><ul class="inline"><li>&copy; <?php echo date('Y'); ?> <a href="http://jeffreifman.com/consulting">NewsCloud Consulting</a></li><li><span class="dot divider"> &middot;</span></li><li><a href="https://twitter.com/intent/user?screen_name=reifman">@reifman</a></li></ul></div>
+  	</div><!-- footer -->
+
+  </div><!-- page -->
 
 </div><!-- page -->
 </body>

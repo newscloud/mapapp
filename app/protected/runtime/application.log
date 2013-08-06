@@ -82,3 +82,17 @@ Stack trace:
 	`modified_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci.
 2013/08/05 11:16:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mapapp.ma_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `ma_migration`.
+2013/08/05 17:39:54 [error] [php] include(m130806_003846_add_is_corrected_to_neighborhoods.php): failed to open stream: No such file or directory (/Users/Jeff/Sites/MapApp/framework/YiiBase.php:421)
+Stack trace:
+#0 /Users/Jeff/Sites/MapApp/framework/cli/commands/MigrateCommand.php(433): spl_autoload_call()
+#1 /Users/Jeff/Sites/MapApp/framework/cli/commands/MigrateCommand.php(388): MigrateCommand->instantiateMigration()
+#2 /Users/Jeff/Sites/MapApp/framework/cli/commands/MigrateCommand.php(113): MigrateCommand->migrateUp()
+#3 unknown(0): MigrateCommand->actionUp()
+#4 /Users/Jeff/Sites/MapApp/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#5 /Users/Jeff/Sites/MapApp/framework/console/CConsoleCommandRunner.php(67): MigrateCommand->run()
+#6 /Users/Jeff/Sites/MapApp/framework/console/CConsoleApplication.php(91): CConsoleCommandRunner->run()
+#7 /Users/Jeff/Sites/MapApp/framework/base/CApplication.php(169): CConsoleApplication->processRequest()
+#8 /Users/Jeff/Sites/MapApp/framework/yiic.php(33): CConsoleApplication->run()
+#9 /Users/Jeff/Sites/MapApp/app/protected/yiic.php(7): require_once()
+#10 /Users/Jeff/Sites/MapApp/app/protected/yiic(4): require_once()
+
