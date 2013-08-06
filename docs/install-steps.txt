@@ -15,11 +15,11 @@ yourdomain.com A record to xxx.xxx.xxx.xxx (IP address)
 
 Run the following steps to install LAMP:
 ---------------------------------------------------
-sudo apt-get update
-sudo apt-get install apache2
-sudo apt-get install php5 libapache2-mod-php5
-sudo apt-get install php5-curl
-sudo a2enmod rewrite
+> sudo apt-get update
+> sudo apt-get install apache2
+> sudo apt-get install php5 libapache2-mod-php5
+> sudo apt-get install php5-curl
+> sudo a2enmod rewrite
 
 Install the MapApp source code... 
 ---------------------------------------------------
